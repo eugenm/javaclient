@@ -14,9 +14,11 @@ import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import com.google.common.base.Charsets;
+import com.google.common.io.Files;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,6 +50,8 @@ public class MessageDialogController implements Initializable {
 	@FXML
 	private Label toLabel;
 
+	private String content;
+
 	public void exit() {
 		System.out.println("closing");
 		System.exit(0);
@@ -69,8 +73,17 @@ public class MessageDialogController implements Initializable {
 		fileChooser.setTitle("Open Resource File");
 		File file = fileChooser.showOpenDialog(window);
 		if(file != null){
-			htmlEditor.setHtmlText("Hallo");
+			try {
+				content = Files.toString(file, Charsets.UTF_8);
+			} catch (IOException e) {
+				log.error(e.getMessage());
+			}
+			htmlEditor.setHtmlText(content);
 		}
+	}
+	
+	public void send(){
+		System.out.println(htmlEditor.getHtmlText());
 	}
 
 }

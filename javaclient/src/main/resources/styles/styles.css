@@ -49,7 +49,7 @@
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 
-.html-editor {
+/*.html-editor {
     -fx-base: ff00aa;
     -fx-color: ff00aa;
     -fx-control-inner-background: ff00aa;
@@ -62,4 +62,4 @@
     -fx-text-inner-color: ff00aa;
     -fx-mark-color: ff00aa;
     -fx-text-fill: ff00aa;
-}
+}*/

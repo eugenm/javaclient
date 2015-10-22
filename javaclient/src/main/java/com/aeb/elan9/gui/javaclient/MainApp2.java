@@ -2,6 +2,7 @@ package com.aeb.elan9.gui.javaclient;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -23,10 +24,10 @@ public class MainApp2 extends Application {
 		log.debug("Loading FXML for main view from: {}", fxmlFile);
 		FXMLLoader loader = new FXMLLoader();
 		
-		bundle = ResourceBundle.getBundle("bundles.lang", new Locale("en","EN"));
+		bundle = ResourceBundle.getBundle("bundles.lang", new Locale("de","DE"));
 		loader.setResources(bundle);
 //		Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-		VBox rootNode = (VBox) loader.load(getClass().getResourceAsStream(fxmlFile));
+		Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 		log.debug("Showing JFX scene");
 		Scene scene = new Scene(rootNode, 800, 600);
 		
