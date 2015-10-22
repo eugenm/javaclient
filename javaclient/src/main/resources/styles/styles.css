@@ -7,6 +7,23 @@
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 
+.mylabel {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-text-fill: #333333;
+    -fx-underline: true;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.button-control {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(63, 91, 195, 1) , 5, 0.0 , 0 , 1 );
+}
+
 .button {
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
@@ -16,7 +33,7 @@
 }
 
 .button:hover{
-    -fx-base: #395bae;
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }
 
 /* Component specific styles */
@@ -32,7 +49,7 @@
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 
-/*.html-editor {
+.html-editor {
     -fx-base: ff00aa;
     -fx-color: ff00aa;
     -fx-control-inner-background: ff00aa;
@@ -45,4 +62,4 @@
     -fx-text-inner-color: ff00aa;
     -fx-mark-color: ff00aa;
     -fx-text-fill: ff00aa;
-}*/
+}

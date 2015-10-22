@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.input.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.web.*?>
@@ -9,103 +10,101 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <VBox id="rootPane" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aeb.elan9.gui.javaclient.MessageDialogController">
-   <children>
-      <MenuBar VBox.vgrow="NEVER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem onAction="#exit" text="Close">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="LEFT" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <VBox alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER">
-               <children>
-                  <VBox>
-                     <children>
-                        <Label fx:id="toLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="42.0" text="To:">
-                           <VBox.margin>
-                              <Insets bottom="5.0" top="5.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label fx:id="fromLabel" layoutX="14.0" layoutY="14.0" text="From:">
-                           <VBox.margin>
-                              <Insets bottom="5.0" top="5.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label fx:id="subjectLabel" layoutX="14.0" layoutY="69.0" text="Subject:">
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox>
-                     <children>
-                        <TextField fx:id="toTextField" prefWidth="300.0">
-                           <padding>
-                              <Insets bottom="5.0" top="5.0" />
-                           </padding>
-                        </TextField>
-                        <TextField fx:id="subjectTextField">
-                           <padding>
-                              <Insets bottom="5.0" top="5.0" />
-                           </padding>
-                        </TextField>
-                        <TextField fx:id="fromTextField" prefWidth="300.0">
-                           <padding>
-                              <Insets bottom="5.0" top="5.0" />
-                           </padding>
-                        </TextField>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </VBox>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="5.0" top="5.0" />
-               </VBox.margin>
-            </HBox>
-         </children>
-      </VBox>
-      <ScrollPane VBox.vgrow="ALWAYS">
-         <content>
-            <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="650.0" />
-         </content>
-      </ScrollPane>
-      <HBox alignment="CENTER">
-         <children>
-            <Pane prefWidth="400.0" />
-            <Button fx:id="sendButton" mnemonicParsing="false" text="Send">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="50.0" right="5.0" top="10.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="cancelButton" mnemonicParsing="false" text="Cancel">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="5.0" top="10.0" />
-               </HBox.margin>
-            </Button>
-         </children>
-      </HBox>
-   </children>
+	<children>
+		<MenuBar VBox.vgrow="NEVER">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#openDoc" text="Open" />
+						<MenuItem onAction="#exit" text="Close">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Edit">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Delete" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" text="About" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<VBox alignment="CENTER">
+			<children>
+				<HBox alignment="CENTER">
+					<children>
+						<VBox>
+							<children>
+								<Label fx:id="toLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="42.0" styleClass="mylabel" text="To:">
+									<VBox.margin>
+										<Insets bottom="5.0" top="5.0" />
+									</VBox.margin>
+								</Label>
+								<Label fx:id="fromLabel" layoutX="14.0" layoutY="14.0" styleClass="mylabel" text="From:">
+									<VBox.margin>
+										<Insets bottom="5.0" top="5.0" />
+									</VBox.margin>
+								</Label>
+								<Label fx:id="subjectLabel" layoutX="14.0" layoutY="69.0" styleClass="mylabel" text="Subject:">
+									<VBox.margin>
+										<Insets top="5.0" />
+									</VBox.margin>
+								</Label>
+							</children>
+							<HBox.margin>
+								<Insets left="10.0" />
+							</HBox.margin>
+						</VBox>
+						<VBox>
+							<children>
+								<TextField fx:id="toTextField" prefWidth="300.0">
+									<padding>
+										<Insets bottom="5.0" top="5.0" />
+									</padding>
+								</TextField>
+								<TextField fx:id="subjectTextField">
+									<padding>
+										<Insets bottom="5.0" top="5.0" />
+									</padding>
+								</TextField>
+								<TextField fx:id="fromTextField" prefWidth="300.0">
+									<padding>
+										<Insets bottom="5.0" top="5.0" />
+									</padding>
+								</TextField>
+							</children>
+							<HBox.margin>
+								<Insets left="10.0" />
+							</HBox.margin>
+						</VBox>
+					</children>
+					<VBox.margin>
+						<Insets bottom="5.0" top="5.0" />
+					</VBox.margin>
+				</HBox>
+			</children>
+		</VBox>
+				<HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="650.0" VBox.vgrow="ALWAYS" />
+		<HBox alignment="CENTER" VBox.vgrow="NEVER">
+			<children>
+            <DatePicker prefHeight="20.0" prefWidth="150.0" showWeekNumbers="true" HBox.hgrow="NEVER" />
+				<Button fx:id="sendButton" alignment="CENTER" mnemonicParsing="false" styleClass="button-control" text="%button.send">
+					<HBox.margin>
+						<Insets bottom="10.0" left="50.0" right="5.0" top="10.0" />
+					</HBox.margin>
+				</Button>
+				<Button fx:id="cancelButton" onAction="#exit" alignment="CENTER" mnemonicParsing="false" styleClass="button-control" text="%button.cancel">
+					<HBox.margin>
+						<Insets bottom="10.0" left="5.0" right="10.0" top="10.0" />
+					</HBox.margin>
+				</Button>
+			</children>
+		</HBox>
+	</children>
 </VBox>
