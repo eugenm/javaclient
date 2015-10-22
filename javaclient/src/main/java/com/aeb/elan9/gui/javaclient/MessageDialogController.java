@@ -25,7 +25,9 @@ public class MessageDialogController {
     @FXML private Button sendButton;
     @FXML private Button cancelButton;
     
-    
+    public void exit(){
+    	System.out.println("closing");
+    }
 	
 	
 }

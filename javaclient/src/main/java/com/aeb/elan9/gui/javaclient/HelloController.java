@@ -6,6 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.web.HTMLEditor;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import org.apache.commons.lang.StringUtils;
@@ -23,6 +27,7 @@ public class HelloController {
 	@FXML
 	private Label messageLabel;
 
+	
 	public void sayHello() {
 
 		String firstName = firstNameField.getText();
@@ -49,26 +54,6 @@ public class HelloController {
 			log.debug("Neither first name nor last name was set, saying hello to anonymous person");
 			messageLabel.setText("Hello mysterious person");
 		}
-	}
-
-	public void openDialog() {
-		log.debug("Opening Dialog ...");
-		try {
-			String fxmlFile = "/fxml/MessageDialog.fxml";
-			log.debug("Loading FXML for main view from: {}", fxmlFile);
-			FXMLLoader loader = new FXMLLoader();
-			Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-			log.debug("Showing JFX scene");
-			Scene scene = new Scene(rootNode, 400, 200);
-			scene.getStylesheets().add("/styles/styles.css");
-			Stage stage = new Stage();
-			stage.setTitle("MessageDialog");
-			stage.setScene(scene);
-			stage.show();
-		} catch (Exception e) {
-			log.warn(e.getMessage());
-		}
-
 	}
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.input.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.web.*?>
 <?import javafx.scene.control.*?>
@@ -7,13 +8,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<VBox id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aeb.elan9.gui.javaclient.MessageDialogController">
+<VBox id="rootPane" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aeb.elan9.gui.javaclient.MessageDialogController">
    <children>
-      <MenuBar>
+      <MenuBar VBox.vgrow="NEVER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem onAction="#exit" text="Close">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="LEFT" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -28,13 +32,13 @@
           </Menu>
         </menus>
       </MenuBar>
-      <VBox>
+      <VBox alignment="CENTER">
          <children>
-            <HBox>
+            <HBox alignment="CENTER">
                <children>
                   <VBox>
                      <children>
-                        <Label fx:id="toLabel" layoutX="14.0" layoutY="42.0" text="To:">
+                        <Label fx:id="toLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="42.0" text="To:">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
@@ -83,12 +87,12 @@
             </HBox>
          </children>
       </VBox>
-      <Pane>
-         <children>
-            <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="300.0" prefWidth="650.0" />
-         </children>
-      </Pane>
-      <HBox>
+      <ScrollPane VBox.vgrow="ALWAYS">
+         <content>
+            <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="650.0" />
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER">
          <children>
             <Pane prefWidth="400.0" />
             <Button fx:id="sendButton" mnemonicParsing="false" text="Send">

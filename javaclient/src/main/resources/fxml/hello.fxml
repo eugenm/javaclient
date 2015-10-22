@@ -18,7 +18,6 @@
    	<Button onAction="#sayHello" text="Say Hello" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
    
    	<Label fx:id="messageLabel" styleClass="hello-message" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0" />
-      <Button onAction="#openDialog" text="Open MessageDialog" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="90.0" />
    </children>
 
 </AnchorPane>
