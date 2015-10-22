@@ -1,5 +1,7 @@
 /* Application wide styles */
 
+
+
 .label {
     -fx-font-size: 12px;
     -fx-font-weight: bold;
@@ -21,7 +23,6 @@
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
     -fx-background-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-effect: dropshadow( three-pass-box , rgba(63, 91, 195, 1) , 5, 0.0 , 0 , 1 );
 }
 
 .button {
@@ -29,7 +30,6 @@
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
     -fx-background-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
 .button:hover{

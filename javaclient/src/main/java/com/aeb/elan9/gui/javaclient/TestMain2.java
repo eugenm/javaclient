@@ -13,14 +13,15 @@ import javafx.stage.*;
 
 public class TestMain2 extends Application {
   public static void main(String[] args) { launch(args); }
-  @Override public void start(final Stage stage) throws IOException {
+  @SuppressWarnings("unchecked")
+@Override public void start(final Stage stage) throws IOException {
     // option pane.
     VBox optionPane = new VBox(10);
     MenuBar menuBar = new MenuBar();
     menuBar.getMenus().addAll(new Menu("School"), new Menu("Social"), new Menu("Network"));
     TreeItem<String> root = new TreeItem<>("Private Notes");
     root.setExpanded(false);
-    root.getChildren().addAll(new TreeItem<>("Layout"), new TreeItem<>("is not"), new TreeItem<>("easy"));
+    root.getChildren().addAll(new TreeItem<String>("Layout"), new TreeItem<String>("is not"), new TreeItem<String>("easy"));
     TreeView<String> notes = new TreeView<>(root);
     optionPane.getChildren().addAll(menuBar, new Label("Kaiser Notes"), notes);
     optionPane.setStyle("-fx-background-color: cornsilk; -fx-padding: 10;");

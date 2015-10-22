@@ -22,7 +22,11 @@ import static javafx.concurrent.Worker.State.FAILED;
  
 public class SimpleSwingBrowser extends JFrame {
  
-    private final JFXPanel jfxPanel = new JFXPanel();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final JFXPanel jfxPanel = new JFXPanel();
     private WebEngine engine;
  
     private final JPanel panel = new JPanel(new BorderLayout());

@@ -1,21 +1,11 @@
 package com.aeb.elan9.gui.javaclient;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
-import javafx.scene.web.HTMLEditor;
-import javafx.scene.web.WebView;
-import javafx.stage.Stage;
-
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.tbee.javafx.scene.layout.fxml.*;
 
 public class HelloController {
 	private static final Logger log = LoggerFactory.getLogger(HelloController.class);

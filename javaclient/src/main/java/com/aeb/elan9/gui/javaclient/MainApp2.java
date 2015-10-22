@@ -2,7 +2,6 @@ package com.aeb.elan9.gui.javaclient;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -30,8 +29,11 @@ public class MainApp2 extends Application {
 		VBox rootNode = (VBox) loader.load(getClass().getResourceAsStream(fxmlFile));
 		log.debug("Showing JFX scene");
 		Scene scene = new Scene(rootNode, 800, 600);
+		
 		scene.getStylesheets().add("/styles/styles.css");
-
+//		String css = MainApp2.class.getResource("/styles/styles.css").toExternalForm();
+//		scene.getStylesheets().add(css);
+		
 		stage.setTitle(bundle.getString("dialog.title"));
 		stage.setScene(scene);
 		stage.show();

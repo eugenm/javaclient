@@ -1,6 +1,5 @@
 package com.aeb.elan9.gui.javaclient;
 
-import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -28,7 +27,6 @@ public class MessageDialogController implements Initializable {
 	//
 	//	}
 
-	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(MessageDialogController.class);
 
 	@FXML
@@ -57,7 +55,7 @@ public class MessageDialogController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		log.debug("Initializing" + getClass().getName());
+		log.debug("Initializing " + getClass().getSimpleName());
 		WebView webview = (WebView) htmlEditor.lookup("WebView");
 		GridPane.setHgrow(webview, Priority.ALWAYS);
 		GridPane.setVgrow(webview, Priority.ALWAYS);
