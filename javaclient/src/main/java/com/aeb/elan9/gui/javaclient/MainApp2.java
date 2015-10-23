@@ -9,10 +9,10 @@ import javafx.stage.Stage;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import org.aerofx.AeroFX;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.aquafx_project.AquaFx;
 
 public class MainApp2 extends Application {
 
@@ -30,8 +30,10 @@ public class MainApp2 extends Application {
 		Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 		log.debug("Showing JFX scene");
 		Scene scene = new Scene(rootNode, 800, 600);
-		AquaFx.style();
+//		AquaFx.style();
+		AeroFX.style();
 //		scene.getStylesheets().add("/styles/styles.css");
+//		scene.getStylesheets().add("/styles/JMetroDarkTheme.css");
 //		String css = MainApp2.class.getResource("/styles/styles.css").toExternalForm();
 //		scene.getStylesheets().add(css);
 		
