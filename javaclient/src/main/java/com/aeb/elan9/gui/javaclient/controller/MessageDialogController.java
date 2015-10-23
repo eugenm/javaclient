@@ -1,4 +1,4 @@
-package com.aeb.elan9.gui.javaclient;
+package com.aeb.elan9.gui.javaclient.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<HBox style="-fx-background-color: #00000000; -fx-border-color: #00000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aeb.elan9.gui.javaclient.MessageDialogController">
+<HBox style="-fx-border-color:#00000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aeb.elan9.gui.javaclient.controller.MessageDialogController">
    <children>
       <TableView editable="true" HBox.hgrow="ALWAYS">
         <columns>

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -12,7 +13,10 @@ import javafx.scene.web.*;
 import javafx.stage.*;
 
 public class TestMain2 extends Application {
+	
   public static void main(String[] args) { launch(args); }
+ 
+  
   @SuppressWarnings("unchecked")
 @Override public void start(final Stage stage) throws IOException {
     // option pane.
@@ -46,7 +50,8 @@ public class TestMain2 extends Application {
     BorderPane layout = new BorderPane();
     layout.setLeft(optionPane);
     layout.setCenter(editorBox);
-    stage.setScene(new Scene(layout));
+    Scene scene = new Scene(layout);
+    stage.setScene(scene);
     stage.show();
 
     // addition of static layout grow constraints for the htmleditor embedded webview.
